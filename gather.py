@@ -1,10 +1,11 @@
 import asyncio
 
-from serial import download_image_async
 from download_many import COLORS, timer
+from serial import download_image_async
 
 
 async def download_many_async_gather(colors):
+    """magic is finally happening"""
     tasks = []
     for color in colors:
         tasks.append(download_image_async(color))

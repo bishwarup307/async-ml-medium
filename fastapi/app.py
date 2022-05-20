@@ -2,9 +2,10 @@ import asyncio
 import os
 import time
 
+from loguru import logger
+
 from fastapi import FastAPI
 from fastapi.concurrency import run_in_threadpool
-from loguru import logger
 
 app = FastAPI()
 

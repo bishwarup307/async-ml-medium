@@ -8,6 +8,8 @@ COLORS = ["blue", "red", "green", "yellow"]
 
 
 def timer(fn):
+    """decorator func to measure the execution time of another function"""
+
     @wraps(fn)
     def wrapper(*args, **kwargs):
         tick = time.perf_counter()
@@ -19,11 +21,13 @@ def timer(fn):
 
 
 def download_many(colors):
+    """mocks downloading many images serially e.g., with requests"""
     for color in colors:
         download_image(color)
 
 
 async def download_many_async(colors):
+    """mocks downloading many images asynchronously e.g., with aiohttp"""
 
     await download_image_async("blue")
     await download_image_async("green")

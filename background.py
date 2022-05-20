@@ -1,10 +1,11 @@
 import asyncio
-from download_many import timer, COLORS
+
+from download_many import COLORS, timer
 
 
 async def some_background_task(color):
     print(f"starting background task {color}")
-    await asyncio.sleep(10)  # hey, i am updaloading to s3 in this line
+    await asyncio.sleep(10)  # <- i am updaloading to s3 in this line
     print(f"finished background task {color}")
 
 
